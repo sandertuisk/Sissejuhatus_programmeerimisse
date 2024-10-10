@@ -17,5 +17,3 @@
 * Nupp "Helista" või "Saada kiri", mis viib kliendi vajaliku rakenduseni telefonis või arvutis.
 
 ## Live Demo
-
-TESTESTTesttest
