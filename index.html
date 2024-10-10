@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toote tagasiside</title>
+</head>
+<body>
+<h1>Toote tagasiside</h1>
+<h2>Kas teil on pretensioone toote kvaliteetsuse osas?</h2>
+<button onclick="showMessage('yes')">Jah</button>
+<button onclick="showMessage('no')">Ei</button>
+
+<p id="message"></p>
+
+<script>
+    function showMessage(answer) {
+        if (answer === 'yes') {
+            document.getElementById("message").innerHTML =
+                "Võtke palun ühendust meie klienditoega.<br>Telefon: 1111 1111<br>Email: email@email.com";
+            document.getElementById("feedbackSection").style.display = "block"; // Näitame vabas vormis kastikest
+        } else {
+            document.getElementById("message").innerHTML =
+                "Suurepärane! Meeldivat toote kasutamist!<br><a href='https://www.google.com' target='_blank'>Siit on võimalik näha meie teisi pakutavaid tooteid</a>";
+            document.getElementById("feedbackSection").style.display = "none"; // Peidame vabas vormis kastikese
+        }
+    }
+
+    function sendMessage() {
+        // Kuvatakse sõnum pärast nupu "Saada" vajutamist
+        document.getElementById("sendMessageStatus").innerText = "Aitäh! Teie kiri on saadetud! Võtame teiega ühendust 3 tööpäeva jooksul.";
+    }
+</script>
+
+<!-- Kast vabas vormis tagasiside ja kontaktide jaoks, algselt peidetud -->
+<div id="feedbackSection" style="display: none;">
+    <h3>Või kirjuta vabas vormis siia ja lisa palun enda kontakt:</h3>
+    <textarea id="feedbackBox" rows="5" cols="50"></textarea><br><br>
+    <button onclick="sendMessage()">Saada</button>
+    <p id="sendMessageStatus"></p>
+</div>
+
+<p>Teil on alati õigus toode tagastada 14 päeva jooksul alates ostu sooritamise hetkest. Selleks palun pöörduge
+    klienditoe poole.</p>
+
+</body>
+</html>
+
