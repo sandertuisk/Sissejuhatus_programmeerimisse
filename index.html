@@ -80,6 +80,22 @@
         document.getElementById("feedback").innerText = "";  // Tühjendame tagasiside
         document.getElementById("backButton").style.display = "none";  // Peidame "Tagasi" nupu
     }
+    // Lisatud tsükkel
+    function sendMessage() {
+        var feedback = document.getElementById("feedbackBox").value;
+        var wordToFind = "probleem";
+        var count = 0;
+        var words = feedback.split(' ');
+
+        for (var i = 0; i < words.length; i++) {
+            if (words[i].toLowerCase() === wordToFind) {
+                count++;
+            }
+        }
+
+        document.getElementById("sendMessageStatus").innerText =
+            "Aitäh! Te mainisite sõna 'probleem' " + count + " korda. Teie kiri on saadetud! Võtame teiega ühendust 3 tööpäeva jooksul.";
+    }
 </script>
 
 <p>Teil on alati õigus toode tagastada 14 päeva jooksul alates ostu sooritamise hetkest. Selleks palun pöörduge
